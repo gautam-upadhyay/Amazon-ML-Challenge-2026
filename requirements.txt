@@ -1,0 +1,26 @@
+# ──────────────────────────────────────────────────────────────────────────────
+# Core pipeline (CPU-only steps: blocking, features, LightGBM models)
+# ──────────────────────────────────────────────────────────────────────────────
+polars==1.44.2
+numpy==2.4.2
+scipy==1.17.1
+scikit-learn==1.8.0
+lightgbm==4.6.0
+rapidfuzz==3.14.6
+sparse_dot_topn==1.2.0
+Unidecode==1.4.0
+pyarrow==23.0.1
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Cross-encoder rerankers (src/rerank/rerank.py and rerank2.py)
+# Require a CUDA-capable GPU; CPU execution is possible but very slow (~20x).
+#
+# PyTorch: install the CUDA variant matching your driver, e.g.:
+#   pip install torch --index-url https://download.pytorch.org/whl/cu121
+# The version below was used to produce the 0.985906 result.
+# ──────────────────────────────────────────────────────────────────────────────
+torch==2.3.1
+transformers==4.41.2
+sentencepiece==0.2.0
+protobuf==5.27.2
+pandas==2.2.2
